@@ -32,8 +32,8 @@ A tenant consists of one or more projects, with at most one project on each clus
 Each project is provided with one or more namespaces to isolate their resources from
 neighbor tenants on the same cluster. Each namespace is also provided with an isolated
 network. Resource quotas (CPU, RAM, and data storage) are applied to the namespace,
-rather than to individual users. Most tenants will have one namespace on one cluster,
-as shown in the diagram below.
+rather than to individual users. Most tenants have one project with one namespace
+on one cluster, as shown in the diagram below.
 
 ![Tenancy diagram](assets/condenser-tenancy.svg)
 
