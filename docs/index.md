@@ -18,6 +18,8 @@ for advice about deploying virtual resources on Condenser.
 ## Support
 
 Please use the following links to request support or make queries about Condenser.
+Before requesting a quote, please read the [Guidance for Prospective Users](https://condenser.arc.ucl.ac.uk/prospective_user_guidance/)
+and the [Terms and Conditions of Use](https://condenser.arc.ucl.ac.uk/terms_and_conditions/).
 
 - [Request a quote](https://io.uk.xurrent.com/cnQ9NDU1Mg)
 - [Request a new tenant](https://io.uk.xurrent.com/cnQ9NTI4MQ)
