@@ -15,6 +15,16 @@ Condenser is developed and maintained by the Environments team within the
 Users can refer to our [Documentation for developers](./documentation/index.md)
 for advice about deploying virtual resources on Condenser.
 
+## Support
+
+Please use the following links to request support or make queries about Condenser.
+
+- [Request a quote](https://io.uk.xurrent.com/cnQ9NDU1Mg)
+- [Request a new tenant](https://io.uk.xurrent.com/cnQ9NTI4MQ)
+- [Request a change to your tenant](https://io.uk.xurrent.com/cnQ9NTI0Mg)
+- [Request general support for your tenant](https://io.uk.xurrent.com/cnQ9NTI4MA)
+- [All other queries](https://myservices.ucl.ac.uk/self-service/requests/new/provide_description?from=wizard&service_id=1311&service_instance_id=3697&subject=Condenser)
+
 ## By the numbers
 
 Condenser comprises a large pool of computing resources, including:
