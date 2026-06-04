@@ -5,7 +5,7 @@ title: Getting started
 # Getting Started
 
 The Condenser platform provides pools of compute and storage resources that can be
-used to create virtual machines, networks, and volumes.
+used to create virtual machines and data volumes.
 
 ## Deploying virtual resources
 
@@ -18,7 +18,7 @@ and the equivalent manual deployment in the [Rancher GUI](./deploying_resources/
 
 Some advantages of describing deployments with IaC are that deployments become repeatable
 and are easier to audit and contribute to. We collect [examples](./examples.md) of
-deployments for Condenser.
+deployments and tutorials for Condenser.
 
 Both the GUI and Terraform deployments use Harvester to deploy resources on the underlying
 kubernetes cluster, which uses [kubevirt](https://kubevirt.io/user-guide/) to provide
