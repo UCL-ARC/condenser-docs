@@ -255,7 +255,7 @@ to tear the VM down.
 
 If the IP address is successfully reported by Terraform, then the address has been
 assigned but the VM needs to be restarted before it will appear in the VM's attributes
-in the kubernetes cluster. You can restart a VM using the [Rancher GUI](./deploying_rancher.md/#change-a-vms-state),
+in the kubernetes cluster. You can restart a VM using the [Rancher GUI](./deploying_rancher/#change-a-vms-state),
 or by issuing the `reboot` command over SSH. You can configure the VM to reboot automatically
 after it launches by adding the following schema to the [cloudinit `user_data`](https://cloudinit.readthedocs.io/en/latest/reference/modules.html#power-state-change):
 
