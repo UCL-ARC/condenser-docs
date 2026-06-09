@@ -18,11 +18,13 @@ kubectl --context sl-p02 get vm -n my-namespace-ns
 ## How can I attach a GPU to my VM?
 
 Configure `kubectl` with your [kubeconfig](./kubeconfig.md) file, then follow [these
-instructions](./kubectl-add-gpu.md) to attach your GPU card to a VM by PCI passthrough.
+instructions](./kubectl-add-gpu.md) to attach a GPU card to a VM by PCI passthrough.
 Contact the [Environments team](https://io.uk.xurrent.com/cnQ9NTI4MA) if you need
-the name of your PCI device.
+the name of the PCI device(s) assigned to your tenant.
 
-Currently the Harvester GUI is not enabled to attach GPUs to VMs.
+Currently the Harvester GUI is not enabled to attach GPUs to VMs. Contact the
+[Environments team](https://io.uk.xurrent.com/cnQ9NTI4MA) if you would like assistance
+attaching a GPU card to a VM.
 
 ## How can I make changes to my tenant?
 
