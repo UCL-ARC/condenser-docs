@@ -13,12 +13,13 @@ All hardware resides in UCL facilities.
 
 Condenser comprises the following clusters:
 
-Cluster | Hardware               | Description
-------- | ---------------------- | ---
-sl-p02  | Intel CPU              | Workloads that only require CPUs
-sl-g01  | Intel CPU + Nvidia GPU | Mixed GPU-CPU workloads
-sl-g02  | Intel CPU + Nvidia GPU | Mixed GPU-CPU workloads
-sl-g03  | Intel CPU + Nvidia GPU | VAT-exempt, mixed GPU-CPU workloads
+Cluster | Hardware                           | Description
+------- | ---------------------------------- | ---
+sl-p02  | Intel CPU                          | Workloads that only require CPUs
+sl-p03  | Intel CPU                          | Workloads that only require CPUs
+sl-g01  | Intel CPU + Nvidia A100, H200 GPUs | Mixed GPU-CPU workloads
+sl-g02  | Intel CPU + Nvidia A100, H200 GPU  | Mixed GPU-CPU workloads
+sl-g03  | Intel CPU + Nvidia H100 GPUs       | VAT-exempt, mixed GPU-CPU workloads
 
 ## Tenancy
 
