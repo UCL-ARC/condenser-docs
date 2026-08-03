@@ -99,7 +99,7 @@ labels = {
 
 ### Configure a Site
 
-Each VM can support multiple sites - choose a unique key per site to ensure configuration
+Each VM can support multiple sites. Choose a unique key per site to ensure configuration
 is applied to the correct site. Keys must be unique within a VM. You should add
 a tag in the following format:
 
