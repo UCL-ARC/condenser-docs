@@ -28,8 +28,9 @@ rule will be recreated.
 To configure HTTPS ingress using the Rancher GUI, choose `Edit Config` on your VM
 and navigate to `Instance Labels`.
 
-**Note**: When saving your VM, Rancher will ask if you wish to restart the VM.
-Restarting the VM is *not* necessary to configure ingress.
+!!! note
+    When saving your VM, Rancher will ask if you wish to restart the VM.
+    Restarting the VM is *not* necessary to configure ingress.
 
 #### Terraform
 
