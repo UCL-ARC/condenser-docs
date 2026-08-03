@@ -101,7 +101,7 @@ labels = {
 
 Each VM can support multiple sites. Choose a unique key per site to ensure configuration
 is applied to the correct site. Keys must be unique within a VM. You should add
-a tag in the following format:
+a label in the following format:
 
 ```hcl
 labels = {
@@ -155,7 +155,7 @@ labels = {
 
 #### `port`
 
-Target port (default 443 if protocol is https, default 80 if protocal is otherwise)
+Target port (default 443 if protocol is https, default 80 if protocol is otherwise)
 
 #### `protocol`
 
@@ -180,7 +180,7 @@ are supported.
 An annotation can be added to an ingress rule by substituting `nginx.ingress.kubernetes.io`
 with `condenser.ingress.[site-key].nginx`. For example, to annotate an ingress rule,
 `test`, with `nginx.ingress.kubernetes.io/proxy-body-size: 8m`, add the following
-instance label to your VM:
+label to your VM:
 
 ```hcl
 labels = {
