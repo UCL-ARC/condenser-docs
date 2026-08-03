@@ -77,7 +77,7 @@ To add nginx annotations, use the `nginx` label name and the annotation key:
 tags = {
   ...
 
-  "condenser_ingress_[site-key]_nginx/[annotation-key]" = "value"
+  "condenser_ingress_[site-key]_nginx_[annotation-key]" = "value"
 }
 ```
 
@@ -87,7 +87,7 @@ For example,
 tags = {
   ...
 
-  "condenser_ingress_test_nginx/proxy-body-size" = "8m"
+  "condenser_ingress_test_nginx_proxy-body-size" = "8m"
 }
 ```
 
