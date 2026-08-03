@@ -4,8 +4,8 @@ title: Configuring a VM for web ingress
 
 # Configuring a VM for web ingress
 
-Web ingress to Condenser can be configured automatically by tagging resources.
-Ingress must be enabled on your tenancy before it can be configured.
+Web ingress to Condenser can be configured automatically by labeling resources.
+Ingress must be enabled on your tenancy before this feature can be used.
 
 HTTPS ingress will be configured with:
 
@@ -20,12 +20,22 @@ off, the ingress rule will be deleted. Once the VM is powered back on, the ingre
 rule will be recreated.
 
 !!! note
-    Virtual machines can be configured with both tags and labels. On Condenser,
-    ingress works by parsing tags into labels. This was done so that ingress can
-    be configured automatically through Terraform, since only tags can be configured
-    with the `harvester_virtualmachine` resource. In the GUI, you can configure either.
-    You may wish to stick to one or the other (e.g. only modify tags, or only modify
-    labels) to prevent confusion.
+    If you are using a version of the Harvester Terraform Provider prior to 1.7.0,
+    labels are not configurable for the [harvester_virtualmachine resource](https://registry.terraform.io/providers/harvester/harvester/1.7.0/docs/resources/virtualmachine).
+    We recommend that you use a recent version of the provider so that the labels
+    feature is available to you. However, if you are required to use an older version
+    of the provider you can use tags instead with the following format:
+
+    ``` yaml
+    condenser_ingress_[site-key]_[label-name]: value
+    ```
+
+    For example, if you choose a key, `test`, the `hostname` label would be configured
+using:
+
+    ``` yaml
+    condenser_ingress_test_hostname: some-hostname-here
+    ```
 
 ## Configuration
 
