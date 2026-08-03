@@ -48,44 +48,48 @@ labels = {
     labels are not configurable for the [harvester_virtualmachine resource](https://registry.terraform.io/providers/harvester/harvester/1.7.0/docs/resources/virtualmachine).
     We recommend that you use a recent version of the provider so that labels and
     other features are available to you. However, if you are required to use an
-    older version of the provider you can use tags instead. Tags with the following
-    format will be parsed into the correct labels by the ingress feature:
+    older version of the provider you can use tags instead.
 
-    ```hcl
-    tags = {
-      "condenser_ingress_[site-key]_[label-name]" = "value"
-    }
-    ```
+##### Using tags instead of labels
 
-    For example, if you choose a key, `test`, the `hostname` label would be configured
+Tags with the following format will be parsed into the correct labels by the ingress
+feature:
+
+```hcl
+tags = {
+  "condenser_ingress_[site-key]_[label-name]" = "value"
+}
+```
+
+For example, if you choose a key, `test`, the `hostname` label would be configured
 using:
 
-    ```hcl
-    tags = {
-      "condenser_ingress_isEnabled"     = true
-      "condenser_ingress_test_hostname" = "some-hostname-here"
-    }
-    ```
+```hcl
+tags = {
+  "condenser_ingress_isEnabled"     = true
+  "condenser_ingress_test_hostname" = "some-hostname-here"
+}
+```
 
-    To add nginx annotations, use the `nginx` suffix and the annotation key:
+To add nginx annotations, use the `nginx` label name and the annotation key:
 
-    ```hcl
-    tags = {
-      ...
+```hcl
+tags = {
+  ...
 
-      "condenser_ingress_[site-key]_nginx/[annotation-key]" = "value"
-    }
-    ```
+  "condenser_ingress_[site-key]_nginx/[annotation-key]" = "value"
+}
+```
 
-    For example,
+For example,
 
-    ```hcl
-    tags = {
-      ...
+```hcl
+tags = {
+  ...
 
-      "condenser_ingress_test_nginx/proxy-body-size" = "8m"
-    }
-    ```
+  "condenser_ingress_test_nginx/proxy-body-size" = "8m"
+}
+```
 
 ### Enable Ingress to a VM
 
