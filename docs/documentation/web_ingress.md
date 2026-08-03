@@ -29,8 +29,8 @@ To configure HTTPS ingress using the Rancher GUI, choose `Edit Config` on your V
 and navigate to `Instance Labels`.
 
 !!! note
-    When saving your VM, Rancher will ask if you wish to restart the VM.
-    Restarting the VM is *not* necessary to configure ingress.
+    When saving your VM configuration, Rancher will ask if you wish to restart the
+    VM. Restarting the VM is *not* necessary to configure ingress.
 
 #### Terraform
 
@@ -141,6 +141,16 @@ Labels the virtual machine so that an ingress will be generated.
 #### `hostname`
 
 The final ingressed FQDN is `<hostname>.<project name>.condenser.arc.ucl.ac.uk`.
+
+!!! example
+    A project called `ucl-project` would configure a virtual machine in the `ucl-project-ns`
+    namespace with the labels:
+
+    ```yaml
+    condenser.ingress/isEnabled: true
+    condenser.ingress.demo/hostname: my-site
+    ```
+    To publish a website available at `https://my-site.ucl-project.condenser.arc.ucl.ac.uk`.
 
 ### Optional Labels
 
