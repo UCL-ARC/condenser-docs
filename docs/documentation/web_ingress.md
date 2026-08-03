@@ -62,7 +62,7 @@ using:
 
     ```hcl
     tags = {
-      "condenser_ingress_isEnabled" = true
+      "condenser_ingress_isEnabled"     = true
       "condenser_ingress_test_hostname" = "some-hostname-here"
     }
     ```
@@ -105,7 +105,7 @@ a label in the following format:
 
 ```hcl
 labels = {
-    "condenser.ingress.[site-key]/[label-name]: value
+    "condenser.ingress.[site-key]/[label-name]" = "value"
   }
 ```
 
@@ -114,7 +114,7 @@ using:
 
 ```hcl
 labels = {
-    "condenser.ingress/isEnabled" = true
+    "condenser.ingress/isEnabled"     = true
     "condenser.ingress.test/hostname" = "some-hostname-here"
   }
 ```
@@ -125,7 +125,7 @@ These labels are required:
 
 ```hcl
 labels = {
-    "condenser.ingress/isEnabled" = true
+    "condenser.ingress/isEnabled"     = true
     "condenser.ingress.test/hostname" = "some-hostname-here"
   }
 ```
@@ -210,7 +210,7 @@ to the VM on port 80, by labeling a `harvester_virtualmachine` resource like so:
 
 ```hcl
 labels = {
-    "condenser.ingress/isEnabled" = true
+    "condenser.ingress/isEnabled"     = true
     "condenser.ingress.test/hostname" = "test-host"
   }
 ```
@@ -233,11 +233,13 @@ labels = {
 Create an ingress, `test`, which proxies `test-host.<project name>.condenser.arc.ucl.ac.uk`
 to the VM on port 443 using HTTPS:
 
-```yaml
-condenser.ingress/isEnabled: true
-condenser.ingress.test/hostname: test-host
-condenser.ingress.test/port: 443
-condenser.ingress.test/protocol: https
+```hcl
+labels = {
+    "condenser.ingress/isEnabled"     = true
+    "condenser.ingress.test/hostname" = "test-host"
+    "condenser.ingress.test/port"     = "443"
+    "condenser.ingress.test/protocol" = "https"
+  }
 ```
 
 ### Ingress to a K3s VIP on a custom port
@@ -245,11 +247,13 @@ condenser.ingress.test/protocol: https
 Create an ingress, `testvip`, which proxies `test-host.<project name>.condenser.arc.ucl.ac.uk`
 to a K3s cluster's VIP, 10.134.8.9 on port 8080 using HTTP:
 
-```yaml
-condenser.ingress/isEnabled: true
-condenser.ingress.testvip/hostname: test-host
-condenser.ingress.testvip/port: 8080
-condenser.ingress.testvip/vip: 10.134.8.9
+```hcl
+labels = {
+    "condenser.ingress/isEnabled"        = true
+    "condenser.ingress.testvip/hostname" = "test-host"
+    "condenser.ingress.testvip/port"     = "8080"
+    "condenser.ingress.testvip/vip"      = "10.134.8.9"
+  }
 ```
 
 ### Multiple Ingresses
@@ -258,12 +262,14 @@ Create two ingresses, `testone` and `testtwo`, which proxy `testone.<project nam
 and `testtwo.<project name>.condenser.arc.ucl.ac.uk` to the VM on port 8080/8081
 respectively using HTTP:
 
-```yaml
-condenser.ingress/isEnabled: true
-condenser.ingress.testone/hostname: testone
-condenser.ingress.testone/port: 8080
-condenser.ingress.testtwo/hostname: testtwo
-condenser.ingress.testtwo/port: 8081
+```hcl
+labels = {
+    "condenser.ingress/isEnabled"        = true
+    "condenser.ingress.testone/hostname" = "testone"
+    "condenser.ingress.testone/port"     = "8080"
+    "condenser.ingress.testtwo/hostname" = "testtwo"
+    "condenser.ingress.testtwo/port"     = "8081"
+  }
 ```
 
 ### Multiple Ingresses with advanced configuration
@@ -273,12 +279,14 @@ and `testtwo.<project name>.condenser.arc.ucl.ac.uk` to the VM on port 8080/8081
 respectively using HTTP. `testone` requires a `proxy-buffer-size` of 8k, whilst
 `testtwo` needs a `proxy-body-size` of 8m:
 
-```yaml
-condenser.ingress/isEnabled: true
-condenser.ingress.testone/hostname: testone
-condenser.ingress.testone/port: 8080
-condenser.ingress.testone.nginx/proxy-buffer-size: 8k
-condenser.ingress.testtwo/hostname: testtwo
-condenser.ingress.testtwo/port: 8081
-condenser.ingress.testtwo.nginx/proxy-body-size: 8m
+```hcl
+labels = {
+    "condenser.ingress/isEnabled"                       = "true"
+    "condenser.ingress.testone/hostname"                = "testone"
+    "condenser.ingress.testone/port"                    = "8080"
+    "condenser.ingress.testone.nginx/proxy-buffer-size" = "8k"
+    "condenser.ingress.testtwo/hostname"                = "testtwo"
+    "condenser.ingress.testtwo/port"                    = "8081"
+    "condenser.ingress.testtwo.nginx/proxy-body-size"   = "8m"
+  }
 ```
