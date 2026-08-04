@@ -20,9 +20,9 @@ kubectl get virtualmachineinstance.kubevirt.io --namespace my-ns
 ```
 
 !!! note
-   Tenant networks provide IP addresses in the `10.134.X.X` range. If your VM has
-   been assigned an address in a different range, it may not be using your tenant
-   network.
+    Tenant networks provide IP addresses in the `10.134.X.X` range. If your VM has
+    been assigned an address in a different range, it may not be using your tenant
+    network.
 
 The VM's base image will typically be configured with a default username with SSH
 login enabled. The username varies depending on the base image of the VM.
