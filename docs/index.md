@@ -24,8 +24,12 @@ and the [Terms and Conditions of Use](https://condenser.arc.ucl.ac.uk/terms_and_
 - [Request a quote](https://io.uk.xurrent.com/cnQ9NDU1Mg)
 - [Request a new tenant](https://io.uk.xurrent.com/cnQ9NTI4MQ)
 - [Request a change to your tenant](https://io.uk.xurrent.com/cnQ9NTI0Mg)
-- [Request general support for your tenant](https://io.uk.xurrent.com/cnQ9NTI4MA)
+- [Request general support for a tenant, including bug reports and security queries](https://io.uk.xurrent.com/cnQ9NTI4MA)
 - [All other queries](https://myservices.ucl.ac.uk/self-service/requests/new/provide_description?from=wizard&service_id=1311&service_instance_id=3697&subject=Condenser)
+
+### Feature suggestions
+
+The Environments team is happy to discuss suggestions for new features or changes to features on Condenser. Please join the [Condenser User Group](https://liveuclac.sharepoint.com/sites/Condenser-User-Group) to discuss these ideas with us; the User Group meets biweekly on Thursdays at 11:00 over Teams. You can also [submit suggestions through MyServices](https://myservices.ucl.ac.uk/self-service/requests/new/provide_description?from=wizard&service_id=1311&service_instance_id=3697&subject=Condenser%20Feature%20Suggestion).
 
 ## By the numbers
 
