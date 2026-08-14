@@ -6,7 +6,7 @@ title: Home
 
 Condenser is a private cloud platform for UCL. Based on traditional High-Performance
 Computing (HPC) hardware, the platform uses virtualisation and containerisation
-technologies to support a variety of services- from web applications to HPC clusters
+technologies to support a variety of services, from web applications to HPC clusters
 and Trusted Research Environments (TREs). Condenser is designed to enable cost-effective,
 cloud-native research computing at UCL.
 
@@ -29,7 +29,10 @@ and the [Terms and Conditions of Use](https://condenser.arc.ucl.ac.uk/terms_and_
 
 ### Feature suggestions
 
-The Environments team is happy to discuss suggestions for new features or changes to features on Condenser. Please join the [Condenser User Group](https://liveuclac.sharepoint.com/sites/Condenser-User-Group) to discuss these ideas with us; the User Group meets biweekly on Thursdays at 11:00 over Teams. You can also [submit suggestions through MyServices](https://myservices.ucl.ac.uk/self-service/requests/new/provide_description?from=wizard&service_id=1311&service_instance_id=3697&subject=Condenser%20Feature%20Suggestion).
+The Environments team is happy to discuss suggestions for new features or changes
+to features on Condenser. Please join the [Condenser User Group](https://liveuclac.sharepoint.com/sites/Condenser-User-Group)
+to discuss these ideas with us; the User Group meets biweekly on Thursdays at 11:00
+over Teams. You can also [submit suggestions through MyServices](https://myservices.ucl.ac.uk/self-service/requests/new/provide_description?from=wizard&service_id=1311&service_instance_id=3697&subject=Condenser%20Feature%20Suggestion).
 
 ## By the numbers
 
