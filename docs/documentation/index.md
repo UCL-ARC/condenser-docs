@@ -9,9 +9,13 @@ used to create virtual machines and data volumes.
 
 ## Deploying virtual resources
 
-Within the UCL network, Condenser can be accessed through [Rancher](https://rancher.condenser.arc.ucl.ac.uk).
+Condenser can be accessed through [Rancher](https://rancher.condenser.arc.ucl.ac.uk).
 Resources can be deployed manually through this interface. Resources can also be
 automatically deployed using Infrastructure as Code (IaC) methods such as [Terraform](https://developer.hashicorp.com/terraform/language).
+
+Condenser is typically only accessible from the UCL network. You will need to be
+connected to on-campus internet or the UCL VPN to use Rancher or `kubectl` to manage
+resources on Condenser.
 
 We have documentation demonstrating a simple [Terraform deployment](./deploying_resources/deploying_terraform/#configure-the-vm-for-ssh-access)
 and the equivalent manual deployment in the [Rancher GUI](./deploying_resources/deploying_rancher.md).
