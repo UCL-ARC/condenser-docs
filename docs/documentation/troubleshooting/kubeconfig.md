@@ -24,6 +24,13 @@ account is permitted to do, including the destruction of resources.
 
 This is your kubeconfig file.
 
+!!! note
+    You can download one kubeconfig file that contains your credentials for multiple
+    clusters with this method. The clusters are identified in the kubeconfig file with
+    contexts. You can use the `--context` flag with `kubectl` to specify the cluster
+    you want to use, and you can edit the kubeconfig file to change the default context.
+    You can also configure a context for the Harvester Terraform provider.
+
 The [Harvester Terraform provider](https://registry.terraform.io/providers/harvester/harvester/latest/docs#schema)
 accepts the path to the kubeconfig file from the `KUBECONFIG` environment variable
 or as configuration to the provider block.
