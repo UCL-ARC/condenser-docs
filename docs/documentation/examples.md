@@ -26,9 +26,13 @@ that have been developed for use in deployments on Condenser.
 This repository contains several useful modules for deploying virtual machines and
 k3s-based kubernetes clusters.
 
-## Deployments
+## Deployments and Demos
 
 These repositories describe complete deployments for Condenser.
+
+### [UCL-ARC/condenser-demo-slinky](https://github.com/UCL-ARC/condenser-demo-slinky)
+
+A short, minimal demonstration of how to use [Slinky](https://slinky.schedmd.com/docs/), the kubernetes operator for Slurm, on Condenser.
 
 ### [UCL-ARC/terraform-harvester-vm-demo](https://github.com/UCL-ARC/terraform-harvester-vm-demo)
 
