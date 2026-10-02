@@ -50,6 +50,14 @@ circumstances:
 security incident.
 - In automated services, such as transfers between storage systems for service maintenance.
 
+### Ownership and leaving UCL
+
+Your resources and data on Condenser are controlled at the level of the tenant. That is,
+every member of the tenant can modify the tenant resources. If you need to give another
+UCL person permission to manage your resources, you can [request to add them to the tenant](https://io.uk.xurrent.com/cnQ9NTI0Mg).
+
+If you are leaving UCL, you can [request to transfer ownership of the tenant](https://io.uk.xurrent.com/cnQ9NTI0Mg).
+
 ## Acknowledgement in Works
 
 We request that you acknowledge the use of the Condenser platform in any publications
@@ -57,5 +65,5 @@ describing research that was accomplished using your resources on Condenser. We 
 the following acknowledgement:
 
 > "The authors acknowledge the use of the UCL Condenser private cloud platform, and
-> the support of the UCL Centre for Advanced Research Computing, in the completion
+> the support of the UCL Centre for Advanced Research Computing in the completion
 > of this work."
