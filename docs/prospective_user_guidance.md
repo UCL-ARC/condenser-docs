@@ -50,5 +50,6 @@ your team may need to be able to do the following tasks:
   such as configuring the firewall in your virtual machines
 - Securing your environment to professional standards for the storage and
   processing of sensitive data
-- Keeping your data safe by using external version control and backups
+- Keeping your data safe by using external version control and backups, or mounting
+  an external storage provider such as the [RDSS](https://www.ucl.ac.uk/research-innovation/advanced-research-computing/platforms-and-services/research-data-storage-service)
 - Supporting third-party users in their access to and use of your application
