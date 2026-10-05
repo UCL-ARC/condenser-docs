@@ -28,8 +28,9 @@ the ingress rule will be recreated.
 To configure HTTPS ingress using the Rancher GUI, choose `Edit Config` on your
 VM and navigate to `Instance Labels`.
 
-!!! note When saving your VM configuration, Rancher will ask if you wish to
-restart the VM. Restarting the VM is _not_ necessary to configure ingress.
+!!! note
+    When saving your VM configuration, Rancher will ask if you wish to
+    restart the VM. Restarting a the VM is _not_ necessary to configure ingress.
 
 #### Terraform
 
@@ -43,12 +44,13 @@ labels = {
   }
 ```
 
-!!! note If you are using a version of the Harvester Terraform Provider prior to
-1.7.0, labels are not configurable for the
-[harvester_virtualmachine resource](https://registry.terraform.io/providers/harvester/harvester/1.7.0/docs/resources/virtualmachine).
-We recommend that you use a recent version of the provider so that labels and
-other features are available to you. However, if you are required to use an
-older version of the provider you can use tags instead.
+!!! note
+    If you are using a version of the Harvester Terraform Provider prior to
+    1.7.0, labels are not configurable for the
+    [harvester_virtualmachine resource](https://registry.terraform.io/providers/harvester/harvester/1.7.0/docs/resources/virtualmachine).
+    We recommend that you use a recent version of the provider so that labels and
+    other features are available to you. However, if you are required to use an
+    older version of the provider you can use tags instead.
 
 ##### Using tags instead of labels
 
@@ -142,8 +144,9 @@ Labels the virtual machine so that an ingress will be generated.
 
 The final ingressed FQDN is `<hostname>.<project name>.condenser.arc.ucl.ac.uk`.
 
-!!! example A project called `ucl-project` would configure a virtual machine in
-the `ucl-project-ns` namespace with the labels:
+!!! example
+    A project called `ucl-project` would configure a virtual machine in
+    the `ucl-project-ns` namespace with the labels:
 
 ```yaml
 condenser.ingress/isEnabled: true
