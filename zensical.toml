@@ -16,8 +16,29 @@ features = [
 favicon = "assets/favicon.ico"
 logo = "assets/UCL_social_icon_square_web.jpg"
 
+# Defining markdown_extensions replaces Zensical's defaults, so the full
+# default set is listed here. Removing entries (e.g. superfences/highlight)
+# breaks features such as code blocks.
 [project.markdown_extensions]
-attr_list = {}
+abbr = {}
 admonition = {}
-# abbr = {}
+attr_list = {}
+def_list = {}
+footnotes = {}
+md_in_html = {}
+toc = { permalink = true }
 # pymdownx.snippets = {}
+"pymdownx.arithmatex" = { generic = true }
+"pymdownx.betterem" = {}
+"pymdownx.caret" = {}
+"pymdownx.details" = {}
+"pymdownx.emoji" = { emoji_generator = "zensical.extensions.emoji.to_svg", emoji_index = "zensical.extensions.emoji.twemoji" }
+"pymdownx.highlight" = { anchor_linenums = true, line_spans = "__span", pygments_lang_class = true }
+"pymdownx.inlinehilite" = {}
+"pymdownx.keys" = {}
+"pymdownx.mark" = {}
+"pymdownx.smartsymbols" = {}
+"pymdownx.superfences" = {}
+"pymdownx.tabbed" = { alternate_style = true }
+"pymdownx.tasklist" = { custom_checkbox = true }
+"pymdownx.tilde" = {}

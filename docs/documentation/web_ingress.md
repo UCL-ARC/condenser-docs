@@ -40,8 +40,8 @@ resource like so:
 
 ```hcl
 labels = {
-    "condenser.ingress/isEnabled" = true
-  }
+  "condenser.ingress/isEnabled" = true
+}
 ```
 
 !!! note
