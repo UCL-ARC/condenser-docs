@@ -17,6 +17,7 @@ favicon = "assets/favicon.ico"
 logo = "assets/UCL_social_icon_square_web.jpg"
 
 [project.markdown_extensions]
-# abbr = {}
 attr_list = {}
+admonition = {}
+# abbr = {}
 # pymdownx.snippets = {}
