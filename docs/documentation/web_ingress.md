@@ -28,8 +28,7 @@ the ingress rule will be recreated.
 To configure HTTPS ingress using the Rancher GUI, choose `Edit Config` on your
 VM and navigate to `Instance Labels`.
 
-!!! note
-    When saving your VM configuration, Rancher will ask if you wish to
+!!! note When saving your VM configuration, Rancher will ask if you wish to
     restart the VM. Restarting the VM is _not_ necessary to configure ingress.
 
 #### Terraform
@@ -44,13 +43,12 @@ labels = {
 }
 ```
 
-!!! note
-    If you are using a version of the Harvester Terraform Provider prior to
-    1.7.0, labels are not configurable for the
-    [harvester_virtualmachine resource](https://registry.terraform.io/providers/harvester/harvester/1.7.0/docs/resources/virtualmachine).
-    We recommend that you use a recent version of the provider so that labels and
-    other features are available to you. However, if you are required to use an
-    older version of the provider you can use tags instead.
+!!! note If you are using a version of the Harvester Terraform Provider prior to
+    1.7.0, labels are not configurable for the [harvester_virtualmachine
+    resource](https://registry.terraform.io/providers/harvester/harvester/1.7.0/docs/resources/virtualmachine).
+    We recommend that you use a recent version of the provider so that labels
+    and other features are available to you. However, if you are required to use
+    an older version of the provider you can use tags instead.
 
 ##### Using tags instead of labels
 
@@ -144,8 +142,7 @@ Labels the virtual machine so that an ingress will be generated.
 
 The final ingressed FQDN is `<hostname>.<project name>.condenser.arc.ucl.ac.uk`.
 
-!!! example
-    A project called `ucl-project` would configure a virtual machine in
+!!! example A project called `ucl-project` would configure a virtual machine in
     the `ucl-project-ns` namespace with the labels:
 
 ```yaml
@@ -194,15 +191,29 @@ Target VIP, used to set the VIP if the IP address is not assigned to the VM
 
 ### Advanced Configuration
 
-In addition to basic ingress rules, all
-[F5 nginx ingress controller annotations](https://docs.nginx.com/nginx-ingress-controller/configuration/ingress-resources/advanced-configuration-with-annotations/#summary-of-annotations)
+In addition to basic ingress rules, all [F5 nginx ingress controller
+annotations](https://docs.nginx.com/nginx-ingress-controller/configuration/ingress-resources/advanced-configuration-with-annotations/#summary-of-annotations)
 are supported.
 
 Note that, if you are more familiar with the annotations used for configuration
 by the (now deprecated)
 [ingress-nginx](https://github.com/kubernetes/ingress-nginx) controller, a
-conversion of the common annotations can be found in the
-[F5 nginx ingress documentation](https://docs.nginx.com/nginx-ingress-controller/install/migrate-ingress-nginx/#advanced-configuration-with-annotations).
+conversion of the common annotations can be found in the [F5 nginx ingress
+documentation](https://docs.nginx.com/nginx-ingress-controller/install/migrate-ingress-nginx/#advanced-configuration-with-annotations).
+
+The F5 `nginx-ingress` controller has been deployed with the following overrides
+of its usual default values to match the `ingress-nginx` controller:
+
+| Setting                   | Value   | F5 default |
+| ------------------------- | ------- | ---------- |
+| `proxy-buffering`         | `false` | `true`     |
+| `http2`                   | `true`  | `false`    |
+| `proxy-connect-timeout`   | `5s`    | `60s`      |
+| `worker-shutdown-timeout` | `240s`  | `N/A`      |
+| `server-tokens`           | `false` | `true`     |
+
+Additionally, the `websocket-services` annotation will be handled automatically
+without any labels or tags being required on the VM.
 
 An annotation can be added to an ingress rule by substituting `nginx.org` with
 `condenser.ingress.[site-key].nginx`. For example, to annotate an ingress rule,
@@ -221,9 +232,9 @@ labels = {
 
 ### Basic Ingress
 
-To create an ingress, `test`, which proxies
-`test-host.<project name>.condenser.arc.ucl.ac.uk` to the VM on port 80, add
-these labels to the VM configuration with the Rancher GUI:
+To create an ingress, `test`, which proxies `test-host.<project
+name>.condenser.arc.ucl.ac.uk` to the VM on port 80, add these labels to the VM
+configuration with the Rancher GUI:
 
 ```yaml
 condenser.ingress/isEnabled: true
@@ -232,9 +243,9 @@ condenser.ingress.test/hostname: test-host
 
 ### Basic Ingress with Terraform
 
-Create an ingress, `test`, which proxies
-`test-host.<project name>.condenser.arc.ucl.ac.uk` to the VM on port 80, by
-labeling a `harvester_virtualmachine` resource like so:
+Create an ingress, `test`, which proxies `test-host.<project
+name>.condenser.arc.ucl.ac.uk` to the VM on port 80, by labeling a
+`harvester_virtualmachine` resource like so:
 
 ```hcl
 labels = {
@@ -245,23 +256,22 @@ labels = {
 
 ### Advanced Ingress with Terraform
 
-Create an ingress, `test`, which proxies
-`test-host.<project name>.condenser.arc.ucl.ac.uk` to the VM on port 80 with
-`client-max-body-size` set to 8m
+Create an ingress, `test`, which proxies `test-host.<project
+name>.condenser.arc.ucl.ac.uk` to the VM on port 80 with `client-max-body-size`
+set to 8m
 
 ```hcl
 labels = {
-  "condenser.ingress/isEnabled"                  = true
-  "condenser.ingress.test/hostname"              = "test-host"
+  "condenser.ingress/isEnabled"                       = true
+  "condenser.ingress.test/hostname"                   = "test-host"
   "condenser.ingress.test.nginx/client-max-body-size" = "8m"
 }
 ```
 
 ### HTTPS Ingress
 
-Create an ingress, `test`, which proxies
-`test-host.<project name>.condenser.arc.ucl.ac.uk` to the VM on port 443 using
-HTTPS:
+Create an ingress, `test`, which proxies `test-host.<project
+name>.condenser.arc.ucl.ac.uk` to the VM on port 443 using HTTPS:
 
 ```hcl
 labels = {
@@ -274,9 +284,9 @@ labels = {
 
 ### Ingress to a K3s VIP on a custom port
 
-Create an ingress, `testvip`, which proxies
-`test-host.<project name>.condenser.arc.ucl.ac.uk` to a K3s cluster's VIP,
-10.134.8.9 on port 8080 using HTTP:
+Create an ingress, `testvip`, which proxies `test-host.<project
+name>.condenser.arc.ucl.ac.uk` to a K3s cluster's VIP, 10.134.8.9 on port 8080
+using HTTP:
 
 ```hcl
 labels = {
@@ -289,10 +299,10 @@ labels = {
 
 ### Multiple Ingresses
 
-Create two ingresses, `testone` and `testtwo`, which proxy
-`testone.<project name>.condenser.arc.ucl.ac.uk` and
-`testtwo.<project name>.condenser.arc.ucl.ac.uk` to the VM on port 8080/8081
-respectively using HTTP:
+Create two ingresses, `testone` and `testtwo`, which proxy `testone.<project
+name>.condenser.arc.ucl.ac.uk` and `testtwo.<project
+name>.condenser.arc.ucl.ac.uk` to the VM on port 8080/8081 respectively using
+HTTP:
 
 ```hcl
 labels = {
@@ -306,11 +316,11 @@ labels = {
 
 ### Multiple Ingresses with advanced configuration
 
-Create two ingresses, `testone` and `testtwo`, which proxy
-`testone.<project name>.condenser.arc.ucl.ac.uk` and
-`testtwo.<project name>.condenser.arc.ucl.ac.uk` to the VM on port 8080/8081
-respectively using HTTP. `testone` requires a `proxy-buffer-size` of 8k, whilst
-`testtwo` needs a `client-max-body-size` of 8m:
+Create two ingresses, `testone` and `testtwo`, which proxy `testone.<project
+name>.condenser.arc.ucl.ac.uk` and `testtwo.<project
+name>.condenser.arc.ucl.ac.uk` to the VM on port 8080/8081 respectively using
+HTTP. `testone` requires a `proxy-buffer-size` of 8k, whilst `testtwo` needs a
+`client-max-body-size` of 8m:
 
 ```hcl
 labels = {
