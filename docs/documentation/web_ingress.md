@@ -204,6 +204,20 @@ by the (now deprecated)
 conversion of the common annotations can be found in the
 [F5 nginx ingress documentation](https://docs.nginx.com/nginx-ingress-controller/install/migrate-ingress-nginx/#advanced-configuration-with-annotations).
 
+The F5 `nginx-ingress` controller has been deployed with the following
+overrides of its usual default values to match the `ingress-nginx` controller:
+
+| Setting                   | Value   | F5 default |
+| ------------------------- | ------- | ---------- |
+| `proxy-buffering`         | `false` | `true`     |
+| `http2`                   | `true`  | `false`    |
+| `proxy-connect-timeout`   | `5s`    | `60s`      |
+| `worker-shutdown-timeout` | `240s`  | `N/A`      |
+| `server-tokens`           | `false` | `true`     |
+
+Additionally, the `websocket-services` annotation will be handled automatically
+without any labels or tags being required on the VM.
+
 An annotation can be added to an ingress rule by substituting `nginx.org` with
 `condenser.ingress.[site-key].nginx`. For example, to annotate an ingress rule,
 `test`, with `nginx.org/client-max-body-size: 8m`, add the following label to
