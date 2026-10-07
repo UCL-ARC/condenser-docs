@@ -262,8 +262,8 @@ set to 8m
 
 ```hcl
 labels = {
-  "condenser.ingress/isEnabled"                  = true
-  "condenser.ingress.test/hostname"              = "test-host"
+  "condenser.ingress/isEnabled"                       = true
+  "condenser.ingress.test/hostname"                   = "test-host"
   "condenser.ingress.test.nginx/client-max-body-size" = "8m"
 }
 ```
