@@ -3,5 +3,6 @@
     "MD007": {"indent": 4},
     "MD024": {"siblings_only": true},
     "MD046": false,
-    "MD033": false
+    "MD033": false,
+    "MD013": {"code_blocks": false}
 }

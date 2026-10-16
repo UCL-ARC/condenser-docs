@@ -13,8 +13,8 @@ On your local computer, install [kubectl](https://kubernetes.io/docs/reference/k
 and obtain a [kubeconfig file](../troubleshooting/kubeconfig.md) for a cluster on
 Condenser.
 
-Export the location of the kubeconfig file and try the following command to see the
-namespaces that you have permission to read:
+Export the location of the kubeconfig file and try the following command to see
+the namespaces that you have permission to read:
 
 ``` sh
 export KUBECONFIG=/path/to/kubeconfig.yaml
