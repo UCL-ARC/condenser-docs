@@ -8,22 +8,30 @@ title: Deploying external storage
     The steps below expect that a tenancy has been allocated a resource quota for
     *ibm-storage-array*.
 
-    Please contact the Environments team for a resource quota.
+    Please [contact the Environments team](https://io.uk.xurrent.com/cnQ9NTI4MA)
+    to request a resource quota.
 
 The IBM FlashSystem 5200 is an NVMe storage option that provides Condenser with
 terabytes of additional storage.
 
 ## Confirm that a resource quota is available
 
-1. Export your kubeconfig
-    1. `export KUBECONFIG=/path/to/kubeconfig.yaml`
-2. Query assigned quotas
-    2. `kubectl get resourcequotas -n <your_namespace>`
+On your local computer, install [kubectl](https://kubernetes.io/docs/reference/kubectl/)
+and obtain a [kubeconfig file](../troubleshooting/kubeconfig.md) for a cluster on
+Condenser.
+
+Export the location of the kubeconfig file and try the following command to see
+the resource quotas that apply to your namespace:
+
+``` sh
+export KUBECONFIG=/path/to/kubeconfig.yaml
+kubectl get resourcequotas -n tenant-ns
+```
 
 The result will be similar to the snippet below. Check that *ibm-storage-array-quota*
 is present:
 
-```text
+```text hl_lines="3"
 NAME                      REQUEST                                                                  LIMIT                                                      AGE
 default-shbj9             requests.storage: 1927Gi/5000Gi                                          limits.cpu: 30195m/64, limits.memory: 131271080585/384Gi   245d
 ibm-storage-array-quota   ibm-storage-array.storageclass.storage.k8s.io/requests.storage: 0/50Ti                                                              45h
@@ -32,17 +40,20 @@ ibm-storage-array-quota   ibm-storage-array.storageclass.storage.k8s.io/requests
 ## Create a new volume
 
 A volume must be created on the virtual machine so that the storage can be formatted
-and consumed:
+and consumed. To do this with the Rancher GUI:
 
+1. Start from the [**Virtualization Management**](https://rancher.condenser.arc.ucl.ac.uk/dashboard/c/_/harvesterManager/harvesterhci.io.management.cluster)
+   page
+1. Select the cluster where you want to create a volume
 1. Select **Virtual Machines**
-2. Select your virtual machine
-3. Select **Show Configuration**
-4. Select **Edit Config**
-5. Select **Volumes**
-6. Select **Add Volume**
-7. Select **Storage Class**
-8. Choose **ibm-storage-array**
-9. Select **Save**
+1. Select your virtual machine
+1. Select **Show Configuration**
+1. Select **Edit Config**
+1. Select **Volumes**
+1. Select **Add Volume**
+1. Select **Storage Class**
+1. Choose **ibm-storage-array**
+1. Select **Save**
 
 The virtual machine will reboot and the volume will be made available to the guest
 operating system.
