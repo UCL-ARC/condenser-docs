@@ -73,6 +73,3 @@ UUID=<your-id> /data ext4 defaults,nofail 0 0
 # The mount will be owned by root by default. Adjust the permissions as needed
 sudo chown youruser:youruser /data
 ```
-
-
-
