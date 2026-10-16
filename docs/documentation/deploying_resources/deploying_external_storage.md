@@ -4,12 +4,14 @@ title: Deploying external storage
 
 # Deploying external storage
 
-!!!note
-     The steps below expects that a tenancy has been allocated a resource quota for *ibm-storage-array*
+!!! note
+    The steps below expect that a tenancy has been allocated a resource quota for
+    *ibm-storage-array*.
 
-     Please contact the Environments team for a resource quota.
+    Please contact the Environments team for a resource quota.
 
-The IBM FlashSystem 5200 is an NVMe storage option that provides Condenser with terabytes of additional storage.
+The IBM FlashSystem 5200 is an NVMe storage option that provides Condenser with
+terabytes of additional storage.
 
 ## Confirm that a resource quota is available
 
@@ -18,9 +20,10 @@ The IBM FlashSystem 5200 is an NVMe storage option that provides Condenser with 
 2. Query assigned quotas
     2. `kubectl get resourcequotas -n <your_namespace>`
 
-The result will be similar to the snippet below. Check that *ibm-storage-array-quota* is present:
+The result will be similar to the snippet below. Check that *ibm-storage-array-quota*
+is present:
 
-```
+```text
 NAME                      REQUEST                                                                  LIMIT                                                      AGE
 default-shbj9             requests.storage: 1927Gi/5000Gi                                          limits.cpu: 30195m/64, limits.memory: 131271080585/384Gi   245d
 ibm-storage-array-quota   ibm-storage-array.storageclass.storage.k8s.io/requests.storage: 0/50Ti                                                              45h
@@ -28,7 +31,8 @@ ibm-storage-array-quota   ibm-storage-array.storageclass.storage.k8s.io/requests
 
 ## Create a new volume
 
-A volume must be created on the virtual machine so that the storage can be formatted and consumed:
+A volume must be created on the virtual machine so that the storage can be formatted
+and consumed:
 
 1. Select **Virtual Machines**
 2. Select your virtual machine
@@ -40,13 +44,15 @@ A volume must be created on the virtual machine so that the storage can be forma
 8. Choose **ibm-storage-array**
 9. Select **Save**
 
-The virtual machine will reboot and the volume will be made available to the guest operating system.
+The virtual machine will reboot and the volume will be made available to the guest
+operating system.
 
 ## Format a new disk
 
-To make the storage functional, the new volume must be formatted on the guest operating system:
+To make the storage functional, the new volume must be formatted on the guest operating
+system:
 
-```
+```sh
 # Find the new disk
 lsblk
 
